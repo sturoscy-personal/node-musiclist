@@ -1,0 +1,97 @@
+//  Foundation Icons General
+@font-face {
+  font-family: 'FoundationIconsGeneral';
+  src: url('./fonts/foundation/foundation-icons-general.eot');
+  src: url('./fonts/foundation/foundation-icons-general.eot?#iefix') format('embedded-opentype'),
+       url('./fonts/foundation/foundation-icons-general.woff') format('woff'),
+       url('./fonts/foundation/foundation-icons-general.ttf') format('truetype'),
+       url('./fonts/foundation/foundation-icons-general.svg#FoundationIconsGeneral') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//Foundation Icons General Enclosed
+@font-face {
+    font-family: 'FoundationIconsGeneralEnclosed';
+    src: url('./fonts/foundation/foundation-icons-general-enclosed.eot');
+    src: url('./fonts/foundation/foundation-icons-general-enclosed.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/foundation/foundation-icons-general-enclosed.woff') format('woff'),
+         url('./fonts/foundation/foundation-icons-general-enclosed.ttf') format('truetype'),
+         url('./fonts/foundation/foundation-icons-general-enclosed.svg#FoundationIconsGeneralEnclosed') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//Foundation Icons Social
+@font-face {
+    font-family: 'FoundationIconsSocial';
+    src: url('./fonts/foundation/foundation-icons-social.eot');
+    src: url('./fonts/foundation/foundation-icons-social.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/foundation/foundation-icons-social.woff') format('woff'),
+         url('./fonts/foundation/foundation-icons-social.ttf') format('truetype'),
+         url('./fonts/foundation/foundation-icons-social.svg#FoundationIconsSocial') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//CSS to style glyphs
+
+//General
+  //Clean Black Version
+  .foundation-general:before {
+    font-family: "FoundationIconsGeneral"; 
+    content: attr(data-icon);
+    padding-right: 5px;
+  }
+
+  //DeSales Red Version
+  .foundation-general-desales-red:before {
+    color: #C41E3A;
+    font-family: "FoundationIconsGeneral"; 
+    content: attr(data-icon);
+    padding-right: 5px;
+  }
+//End General
+
+.foundation-general-enclosed:before { 
+  font-family: "FoundationIconsGeneralEnclosed";
+  content: attr(data-icon);
+  padding-right: 5px;
+}
+
+.foundation-general-social:before { 
+  font-family: "FoundationIconsSocial";
+  content: attr(data-icon);
+  padding-right: 5px;
+}
+
+// Iconic
+@font-face {
+  font-family: 'IconicFill';
+  src: url('./fonts/iconic/iconicfill/iconic_fill.eot');
+  src: url('./fonts/iconic/iconicfill/iconic_fill.eot?#iefix') format('embedded-opentype'),
+       url('./fonts/iconic/iconicfill/iconic_fill.ttf') format('truetype'),
+       url('./fonts/iconic/iconicfill/iconic_fill.svg#IconicFill') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//CSS to style glyphs
+.iconic-general:before { 
+  font-family: "IconicFill"; 
+  content: attr(data-icon);
+  padding-right: 5px;
+}
+
+// Proxima Nova
+@font-face {
+  font-family: 'Proxima';
+  src: url('./fonts/proxima/ProximaNova.eot');
+  src: url('./fonts/proxima/ProximaNova.eot?#iefix') format('embedded-opentype'),
+       url('./fonts/proxima/ProximaNova.ttf') format('truetype'),
+       url('./fonts/proxima/ProximaNova.svg#IconicFill') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//End Font Faces

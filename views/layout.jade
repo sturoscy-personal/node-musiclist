@@ -1,0 +1,11 @@
+!!! 5
+html(lang='en')
+	head
+		title!= title
+		link(rel='stylesheet', href='css/bootstrap.css')
+		link(rel='stylesheet', href='css/docs.css')
+
+		block scripts
+			script(type='text/javascript', data-main='js/main', src='js/libs/require/require-jquery.js')
+
+	body!= body
