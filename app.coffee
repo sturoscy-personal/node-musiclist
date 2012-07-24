@@ -33,6 +33,9 @@ app.configure 'production', ->
 # Index
 app.get   '/', site.index
 
+# Playlists
+app.get   '/playlists',   playlsts.read
+
 # Songs
 app.post  '/songs',       songs.create
 app.get   '/songs',       songs.read
