@@ -1,6 +1,6 @@
-mongoose = require('mongoose')
-Schema = mongoose.Schema
-ObjectId = Schema.ObjectId;
+mongoose = require 'mongoose'
+Schema   = mongoose.Schema
+ObjectId = Schema.ObjectId
 
 Song = new Schema
 	userID:		String

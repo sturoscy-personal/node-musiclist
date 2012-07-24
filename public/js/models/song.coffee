@@ -9,6 +9,7 @@ define depends, ($, _, Backbone) ->
 
 		idAttribute: '_id'
 
+		### For testing only
 		defaults: {
 			rank: 	'1.'
 			title:  'A Day in the Life'
@@ -17,3 +18,4 @@ define depends, ($, _, Backbone) ->
 			year:   '1971'
 			genre:  'Rock'
 		}
+		###

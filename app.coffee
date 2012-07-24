@@ -1,6 +1,11 @@
+# Application requirements
 express  = require 'express'
 mongoose = require 'mongoose'
 
+# Models
+models   = require './models'
+
+# Server
 app = module.exports = express.createServer()
 
 # Routes
@@ -8,7 +13,7 @@ site      = require './routes/site'
 playlists = require './routes/playlists'
 songs     = require './routes/songs' 
 
-#connect to mongodb
+# Connect to mongodb
 mongodb_url = process.env.MONGOHQ_URL || 'mongodb://localhost/desert'
 mongoose.connect mongodb_url
 
@@ -31,16 +36,13 @@ app.configure 'production', ->
   app.use express.errorHandler()
 
 # Index
-app.get   '/', site.index
+app.get '/', site.index
 
 # Playlists
-app.get   '/playlists',   playlsts.read
+app.get '/playlists', playlists.read
 
 # Songs
-app.post  '/songs',       songs.create
-app.get   '/songs',       songs.read
-app.put   '/songs/:_id',  songs.update
-app.del   '/songs/:_id',  songs.delete
+app.get '/songs', songs.read
 
 port = process.env.PORT || 3000
 app.listen port, ->
