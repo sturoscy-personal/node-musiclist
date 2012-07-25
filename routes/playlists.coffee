@@ -8,10 +8,10 @@ exports.create = (req, res) ->
     res.send playlist
 
 exports.read = (req, res) ->
-  PlayList.find {}, (err, docs) ->
+  PlayList.find {}, (err, playlists) ->
     if err
       res.send err
-    res.send docs
+    res.send playlists
 
 exports.update = (req, res) ->
   # Remove _id from put so mongodb doesn't complain
@@ -22,3 +22,10 @@ exports.update = (req, res) ->
 exports.delete =  (req, res) ->
   PlayList.remove {_id: req.params._id}, (err) ->
     res.send err
+
+# More custom type queries
+exports.findById = (req, res) ->
+  PlayList.findById req.params.id, (err, playlist) ->
+    if err
+      console.log err
+    res.send playlist

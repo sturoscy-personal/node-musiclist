@@ -39,10 +39,13 @@ app.configure 'production', ->
 app.get '/', site.index
 
 # Playlists
-app.get '/playlists', playlists.read
+app.get '/playlists',     playlists.read
+app.all '/playlists/:id', playlists.findById
 
 # Songs
-app.get '/songs', songs.read
+app.get '/songs',       songs.read
+app.get '/songs/votes', songs.findByVotes
+app.all '/songs/:id',   songs.findById
 
 port = process.env.PORT || 3000
 app.listen port, ->

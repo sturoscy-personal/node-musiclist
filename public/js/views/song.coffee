@@ -28,4 +28,3 @@ define depends, ($, _, Backbone, SongTemplate) ->
 			title     = @model.get 'title'
 			artist    = @model.get 'artist'
 			album     = @model.get 'album'
-			console.log rank

@@ -2,11 +2,11 @@ depends = [
 	'jquery',
 	'underscore',
 	'backbone',
-	'cs!collections/playlist',
+	'cs!collections/songs',
 	'cs!views/song'
 ]
 
-define depends, ($, _, Backbone, PlayList, SongView) ->
+define depends, ($, _, Backbone, Songs, SongView) ->
 	AppView = class extends Backbone.View
 
 		# DOM item
@@ -16,14 +16,14 @@ define depends, ($, _, Backbone, PlayList, SongView) ->
 		initialize: ->
 			_.bindAll @, 'addSong', 'addAllSongs'
 			
-			PlayList.bind 'add', 	@addSong
-			PlayList.bind 'reset',	@addAllSongs
+			Songs.bind 'add', 	@addSong
+			Songs.bind 'reset',	@addAllSongs
 
-			PlayList.fetch()
+			Songs.fetch()
 
 		addSong: (song) ->
 			songView = new SongView { model: song }
 			$(@el).append songView.render().el
 
 		addAllSongs: ->
-			PlayList.each @addSong
+			Songs.each @addSong

@@ -8,10 +8,10 @@ exports.create = (req, res) ->
     res.send song
 
 exports.read = (req, res) ->
-  Song.find {}, (err, docs) ->
+  Song.find {}, (err, songs) ->
     if err
       res.send err
-    res.send docs
+    res.send songs
 
 exports.update = (req, res) ->
   # Remove _id from put so mongodb doesn't complain
@@ -22,3 +22,19 @@ exports.update = (req, res) ->
 exports.delete =  (req, res) ->
   Song.remove {_id: req.params._id}, (err) ->
     res.send err
+
+# More custom type queries
+exports.findById = (req, res) ->
+  Song.findById req.params.id, (err, song) ->
+    if err
+      res.send err
+    res.send song
+
+exports.findByVotes = (req, res) ->
+  query = Song.find {}
+  query.asc('upvotes')
+  query.limit(10)
+
+  query.exec (err, songs) ->
+    res.send songs
+    console.log songs

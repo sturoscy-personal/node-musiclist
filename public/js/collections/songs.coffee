@@ -6,7 +6,7 @@ depends = [
 ]
 
 define depends, ($, _, Backbone, Song) ->
-	PlayList = class extends Backbone.Collection
+	Songs = class extends Backbone.Collection
 
 		# Reference the model
 		model: Song
@@ -14,4 +14,4 @@ define depends, ($, _, Backbone, Song) ->
 		# URL for RESTful interface
 		url: '/songs'
 		
-	new PlayList
+	new Songs

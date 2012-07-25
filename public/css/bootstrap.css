@@ -5070,6 +5070,10 @@ p span.foundation-general {
   color: red;
 }
 
+.jumbotron h1 {
+  letter-spacing: -5px;
+}
+
 .red {
   color: red;
 }
