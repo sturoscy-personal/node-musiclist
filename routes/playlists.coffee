@@ -29,3 +29,9 @@ exports.findById = (req, res) ->
     if err
       console.log err
     res.send playlist
+
+exports.findRecent = (req, res) ->
+  query = PlayList.find {}
+  query.limit(10)
+  query.exec (err, playlists) ->
+    res.send playlists

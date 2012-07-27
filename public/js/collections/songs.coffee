@@ -12,6 +12,6 @@ define depends, ($, _, Backbone, Song) ->
 		model: Song
 
 		# URL for RESTful interface
-		url: '/songs'
+		url: '/songs/votes'
 		
 	new Songs

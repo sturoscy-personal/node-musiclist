@@ -39,8 +39,9 @@ app.configure 'production', ->
 app.get '/', site.index
 
 # Playlists
-app.get '/playlists',     playlists.read
-app.all '/playlists/:id', playlists.findById
+app.get '/playlists',         playlists.read
+app.get '/playlists/recent',  playlists.findRecent
+app.all '/playlists/:id',     playlists.findById
 
 # Songs
 app.get '/songs',       songs.read
